@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Chat App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Login Section -->
+    <div id="loginPage" class="page">
+        <h1>Welcome, Login here</h1>
+        <input type="text" id="loginUsername" placeholder="Username" required>
+        <input type="password" id="loginPassword" placeholder="Password" required>
+        <button id="loginButton">Login</button>
+        <p>Don't have an account? <a href="#" id="goToRegister">Register here</a></p>
+    </div>
+
+    <!-- Register Section -->
+    <div id="registerPage" class="page" style="display:none;">
+        <h2>Register</h2>
+        <input type="text" id="registerUsername" placeholder="Username" required>
+        <input type="password" id="registerPassword" placeholder="Password" required>
+        <button id="registerButton">Register</button>
+        <p>Already have an account? <a href="#" id="goToLogin">Login here</a></p>
+    </div>
+
+    <!-- Main Chat Section -->
+    <div id="mainPage" class="page" style="display:none;">
+        <!-- Header Section -->
+        <div class="header">
+            <span id="userGreeting">Logged in as </span>
+            <button id="logoutButton" class="logout-btn">Logout</button>
+        </div>
+
+        <!-- Main Section -->
+        <div class="main-container">
+            <!-- Sidebar with Users List -->
+            <div class="sidebar">
+                <input type="text" id="searchInput" placeholder="Search users..." class="search-input">
+                <ul id="userList" class="user-list">
+                    <!-- User List Items will be populated here dynamically -->
+                </ul>
+            </div>
+
+            <!-- Chat Window -->
+            <div class="chat-window">
+                <div id="chatHeader" class="chat-header">
+                    <!-- Chat Header with Selected User Info -->
+                </div>
+                <div id="chatMessages" class="chat-messages">
+                    <!-- Messages will be populated here dynamically -->
+                </div>
+
+                <div class="chat-input-container">
+                    <!-- File Upload Section -->
+                    <button id="uploadTriggerButton" class="upload-trigger-btn">+</button>
+                    <input type="file" id="fileInput" class="file-input" style="display:none;">
+                    <button id="sendFileButton" class="send-file-btn" style="display:none;">Send File</button>
+
+                    <!-- Message Input and Send Button -->
+                    <input type="text" id="messageInput" placeholder="Type a message..." class="message-input">
+                    <button id="sendMessageButton" class="send-btn">Send</button>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Include SockJS and STOMP -->
+    <script src="https://cdn.jsdelivr.net/npm/sockjs-client@1.5.2/dist/sockjs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/stompjs@2.3.3/lib/stomp.min.js"></script>
+
+
+    <script src="app.js"></script>
+</body>
+
+</html>
